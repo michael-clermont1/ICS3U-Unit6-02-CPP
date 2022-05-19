@@ -2,7 +2,7 @@
 //
 // Created by: Michael Clermont
 // Created on: Feb 2022
-// This program is a guessing game
+// This program is to get largest number in an array
 
 #include <random>
 #include <array>
@@ -11,7 +11,7 @@
 
 template<size_t N>
 int LargeNumber(std::array<int, N> array) {
-    // this functions add up all the numbers in the list
+    // this functions is to get largest number in an array
 
     int largeNumber = 0;
     int maxi = 0;
