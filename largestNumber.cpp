@@ -4,7 +4,7 @@
 // Created on: Feb 2022
 // This program is a guessing game
 
-#include <time.h>
+#include <random>
 #include <array>
 #include <iostream>
 
@@ -33,12 +33,14 @@ main() {
     int aSingleRandomNumber = 0;
     int biggestNumber = 0;
 
-    srand(time(NULL));
 
     // input
     std::cout << "The numbers are: ";
     for (int loop_counter = 0; loop_counter < 10; loop_counter++) {
-        aSingleRandomNumber = (rand() % 100) + 1;
+        std::random_device rseed;
+        std::mt19937 rgen(rseed());
+        std::uniform_int_distribution<int> idist(1, 100);
+        aSingleRandomNumber = idist(rgen);
         randomNumbers[loop_counter] = aSingleRandomNumber;
         std::cout << aSingleRandomNumber << ", ";
     }
